@@ -1,9 +1,12 @@
 # `Fiche explicative du projet` : *Création d'un reporting Excel automatisé avec Python*
 
 ## Description du jeu de données
-Le jeux de données est **SuperStore Dataset** contenant un registre simulé des ventes d'une entreprise aux États-Unis. La source initiale du jeu de données provient du logiciel Tableau, mais les données ont été récupérées sur [Kaggle](https://www.kaggle.com/datasets/vivek468/superstore-dataset-final?resource=download).
+Le jeux de données est **SuperStore Dataset** contenant un registre simulé des ventes d'une entreprise aux États-Unis.
 
 Le jeu de données contient 9 995 observations sur une temporalité de 2014 à 2017.
+
+## Source des données
+La source initiale du jeu de données provient du logiciel Tableau, mais les données ont été récupérées sur [Kaggle](https://www.kaggle.com/datasets/vivek468/superstore-dataset-final?resource=download).
 
 ## Dictionnaire des données
 
@@ -30,4 +33,9 @@ Le jeu de données contient 9 995 observations sur une temporalité de 2014 à 2
 | Quantity | integer | La quantité de produit acheté |
 | Discount | float | Le montant de la remise appliqué |
 | Profit | float | Le montant du bénéfice ou de la perte généré par le produit |
+
+## Objectifs du projet
+L'objectif principal du projet est de créer automatiquement un reporting sur Excel à partir de Python. 
+
+Nous allons devoir importer les données dans une feuille Excel et écrire des formule Excel via Python
 
