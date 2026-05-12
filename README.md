@@ -35,7 +35,9 @@ La source initiale du jeu de données provient du logiciel Tableau, mais les don
 | Profit | float | Le montant du bénéfice ou de la perte généré par le produit |
 
 ## Objectifs du projet
-L'objectif principal du projet est de créer automatiquement un reporting sur Excel à partir de Python. 
+L'objectif principal du projet est de créer automatiquement **un reporting sur Excel à partir de Python**. 
 
-Nous allons devoir importer les données dans une feuille Excel et écrire des formule Excel via Python
+Nous allons devoir importer les données dans une feuille Excel et écrire des formules Excel via Python. Il faudra **varier les analyses et les designs** pour un rendu attractif. Le **filtrage** doit être possible pour préciser les résultats. Le visuel global doit avoir une **structure organisée** et logique. 
+
+![Texte alternatif](schema de création du reporting.png "Titre de l'image")
 
