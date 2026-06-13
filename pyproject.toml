@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "boto3>=1.43.29",
     "ipykernel>=6.29.5",
     "numpy>=2.2.5",
     "openpyxl==3.1.3",
