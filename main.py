@@ -10,7 +10,7 @@ from components.filter import build_all_filters
 
 
 def main():
-    output_path = Path("../output/reporting.xlsx")
+    output_path = Path("output/reporting.xlsx")
 
     dataset = import_and_clean_data()
     print("Importation et nettoyage des données ✅")
