@@ -1,4 +1,5 @@
 # `Fiche explicative du projet` : *Création d'un reporting Excel automatisé avec Python*
+Automatisation d'un dashboard financier Excel dynamique. 
 
 ## Description du jeu de données
 Le jeu de données est **SuperStore Dataset** contenant un registre simulé des ventes d'une entreprise aux États-Unis.
@@ -41,3 +42,44 @@ Nous allons devoir importer les données dans une feuille Excel et écrire des f
 
 Concernant la structure du reporting, le schema ci-dessous représente un objectif du rendu. La partie haute sera réservée à des **éléments textuels de contexte** : le logo, un titre du rapport et la source des données. Ensuite, on doit avoir des **KPIs numériques** pour avoir une information rapide et direct. Plus bas, l'espace sera réservé à l'**affichage de graphiques**. Au centre, il faudrait pouvoir afficher un tableau appliquant la **méthode ABC** sur les données afin de voir les produits plus ou moins rentable. Enfin, sur la partie tout à droite, on doit pouvoir **filtrer les données** sur plusieurs aspects comme le lieu de vente, la date, les types de produits, etc.
 <img src="schema-reporting.png" alt="drawing" width="800"/>
+
+## Générer le rapport
+#### Installation du projet
+```bash
+git clone https://github.com/Oscar-Cnam/projet_openpyxl_superstore.git
+cd projet_openpyxl_superstore
+uv sync
+```
+
+#### Lancer le code
+```bash
+uv run main.py
+```
+
+#### Récupérer le fichier
+Le reporting au format .xlsx sera généré dans le dossier output/ sous le nom reporting.xlsx. Il est également disponible sur [MinIO](https://minio.lab.sspcloud.fr/oscar04/Superstore/reporting.xlsx).
+
+## Architecture du projet
+```text
+projet_openpyxl_superstore/
+├── components/             
+│   ├── __init__.py
+│   ├── charts.py         # Les graphiques
+│   ├── filter.py         # Les filtres déroulants 
+│   ├── indicators.py     # Les indicateurs numériques 
+│   ├── styles.py         # Design des cellules  
+│   └── tables.py         # Tableaux de données créés pour les indicateurs et les graphiques  
+├── data/                   
+│   ├── __init__.py
+│   └── data.py           # Paramètres MinIO et création du fichier de données
+├── notebooks/             
+│   └── notebook.ipynb    # Notebook d'exploration  
+├── output/              
+│   └── reporting.xlsx    # Export du reporting
+├── .gitignore             
+├── main.py               # Fichier de lancement du projet
+├── pyproject.toml       
+├── README.md             
+├── schema-reporting.png   
+└── uv.lock            
+```
