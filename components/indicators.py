@@ -25,14 +25,12 @@ def calculate_delivery_times(ws_data, dataset_length):
 
 
 def build_indicators(ws_data, ws_visualisations, dataset_length):
-    # Nouvelles positions C4, E4, G4
     apply_numerical_kpi(ws_visualisations, "C4", "R", "#,##0.0 $")
     apply_numerical_kpi(ws_visualisations, "E4", "U", "#,##0.0 $")
     apply_numerical_kpi(ws_visualisations, "G4", "S", "#,##0")
 
     calculate_delivery_times(ws_data, dataset_length)
     
-    # Moyenne en J4
     ws_visualisations["J4"] = "=ROUND(AVERAGEIFS(DATA!V:V, DATA!M:M, VISUALISATIONS!B5, DATA!K:K, VISUALISATIONS!B11),1)"
     c = ws_visualisations["J4"]
     c.font = Font(name="Calibri", size=16, bold=True, color="1F497D")

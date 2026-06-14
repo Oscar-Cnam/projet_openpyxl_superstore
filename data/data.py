@@ -39,13 +39,13 @@ def initialize_workbook(dataset, output_path):
 
 
 def upload_to_minio(chemin_local, bucket_name="oscar04", minio_path="Superstore/reporting.xlsx"):
-    """Exporte le fichier généré vers l'espace cloud (S3/MinIO)."""
+    """Exporte le fichier généré vers MinIO"""
     s3_endpoint = os.environ.get("AWS_S3_ENDPOINT")
     
     if not s3_endpoint:
-        print("⚠️ AWS_S3_ENDPOINT non défini, skip de l'upload MinIO.")
+        print("AWS_S3_ENDPOINT non défini, skip de l'upload MinIO.")
         return
         
     s3 = boto3.client("s3", endpoint_url=f"https://{s3_endpoint}")
     s3.upload_file(str(chemin_local), bucket_name, minio_path)
-    print(f"Fichier exporté avec succès sur MinIO dans le bucket {bucket_name}/{minio_path}")
+    print(f"Fichier exporté sur MinIO dans le bucket {bucket_name}/{minio_path}")

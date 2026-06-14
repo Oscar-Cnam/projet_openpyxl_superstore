@@ -24,7 +24,6 @@ def build_bar_chart(ws_data, ws_visualisations):
     chart_top10.x_axis.title = 'Sous-catégories'
     chart_top10.legend = None
 
-    # Nouvel emplacement
     ws_visualisations.add_chart(chart_top10, "C7")
 
 
@@ -50,7 +49,6 @@ def build_doughnut_chart(ws_data, ws_visualisations):
     jam.graphicalProperties.solidFill = "B7A9EB"
     lime.graphicalProperties.solidFill = "EBA9D7"
 
-    # Nouvel emplacement
     ws_visualisations.add_chart(chart_percent, "C27")
 
 

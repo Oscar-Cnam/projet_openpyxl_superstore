@@ -2,7 +2,6 @@ from openpyxl.worksheet.datavalidation import DataValidation
 
 
 def create_filter(ws_visualisations, dataset, column_ref, title, cell_ref_title, cell_ref_filter):
-    # .dropna().astype(str) pour éviter que pandas/openpyxl ne plante sur des None
     distinct_value_list = ",".join(dataset[column_ref].dropna().astype(str).unique())
     
     ws_visualisations[cell_ref_title] = title

@@ -19,7 +19,6 @@ def create_title_abc(ws_visualisations, cell_ref, letter, color):
 
 
 def design_filter_section(ws_visualisations):
-    """Crée l'interface grise sur la gauche pour les filtres."""
     ws_visualisations.column_dimensions['A'].width = 16.5
     ws_visualisations.column_dimensions['B'].width = 17.56
 
