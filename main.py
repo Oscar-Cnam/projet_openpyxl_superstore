@@ -1,0 +1,45 @@
+from pathlib import Path
+
+from data.data import import_and_clean_data, initialize_workbook, upload_to_minio
+
+from components.styles import apply_all_styles
+from components.tables import build_all_tables
+from components.indicators import build_indicators
+from components.charts import build_all_charts
+from components.filter import build_all_filters
+
+
+def main():
+    output_path = Path("../output/reporting.xlsx")
+
+    dataset = import_and_clean_data()
+    print("Importation et nettoyage des données ✅")
+
+    wb, ws_data, ws_visualisations = initialize_workbook(dataset, output_path)
+    print("Initialisation du fichier Excel ✅")
+
+    apply_all_styles(ws_visualisations)
+    print("Application du design ✅")
+
+    build_all_filters(ws_visualisations, dataset)
+    print("Paramétrage des filtres ✅")
+
+    build_all_tables(ws_data, ws_visualisations, dataset)
+    print("Création des tables de calcul ✅")
+
+    build_indicators(ws_data, ws_visualisations, len(dataset))
+    print("Calcul des indicateurs ✅")
+
+    build_all_charts(ws_data, ws_visualisations)
+    print("Génération des graphiques ✅")
+
+    wb.save(output_path)
+    print("Sauvegarde finale ✅")
+    print(f"Terminé ! Fichier disponible à l'emplacement : {output_path}")
+
+    upload_to_minio(output_path)
+    print("Export sur MinIO ✅")
+
+
+if __name__ == "__main__":
+    main()
