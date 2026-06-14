@@ -48,4 +48,4 @@ def upload_to_minio(chemin_local, bucket_name="oscar04", minio_path="Superstore/
         
     s3 = boto3.client("s3", endpoint_url=f"https://{s3_endpoint}")
     s3.upload_file(str(chemin_local), bucket_name, minio_path)
-    print(f"✅ Fichier exporté avec succès sur MinIO dans le bucket {bucket_name}/{minio_path}")
+    print(f"Fichier exporté avec succès sur MinIO dans le bucket {bucket_name}/{minio_path}")
