@@ -2,8 +2,9 @@ from openpyxl.styles import Font, Alignment
 
 
 def apply_numerical_kpi(ws_visualisations, cell, colonne, cell_format):
+    """ Construire des KPIs numériques se basant sur une somme (CA, profits, volume des ventes) """
     c = ws_visualisations[cell]
-    # Modifié pour pointer vers VISUALISATIONS!B5 et B11
+    # Formule de somme avec assignation du filtre
     c.value = f"=SUMIFS(DATA!{colonne}:{colonne}, DATA!M:M, VISUALISATIONS!B5, DATA!K:K, VISUALISATIONS!B11)"
     c.number_format = cell_format
     c.font = Font(name="Calibri", size=16, bold=True, color="1F497D")
@@ -17,6 +18,7 @@ def apply_numerical_kpi(ws_visualisations, cell, colonne, cell_format):
 
 
 def calculate_delivery_times(ws_data, dataset_length):
+    """ Calcule pour chaque vente le temps de livraison en jours """
     for row_cell in range(2, dataset_length + 2):
         cell_application = f"V{row_cell}"
         date_debut = f"C{row_cell}"
@@ -25,12 +27,17 @@ def calculate_delivery_times(ws_data, dataset_length):
 
 
 def build_indicators(ws_data, ws_visualisations, dataset_length):
+    """ Crée les différents indicateurs """
+    # CA
     apply_numerical_kpi(ws_visualisations, "C4", "R", "#,##0.0 $")
+    # Profits
     apply_numerical_kpi(ws_visualisations, "E4", "U", "#,##0.0 $")
+    # Volume des ventes
     apply_numerical_kpi(ws_visualisations, "G4", "S", "#,##0")
 
     calculate_delivery_times(ws_data, dataset_length)
     
+    # Temps de livraison moyen
     ws_visualisations["J4"] = "=ROUND(AVERAGEIFS(DATA!V:V, DATA!M:M, VISUALISATIONS!B5, DATA!K:K, VISUALISATIONS!B11),1)"
     c = ws_visualisations["J4"]
     c.font = Font(name="Calibri", size=16, bold=True, color="1F497D")

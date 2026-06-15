@@ -1,12 +1,15 @@
 from pathlib import Path
+from src.projet_openpyxl_superstore.data.data import import_and_clean_data, initialize_workbook, upload_to_minio
+from src.projet_openpyxl_superstore.components.styles import apply_all_styles
+from src.projet_openpyxl_superstore.components.tables import build_all_tables
+from src.projet_openpyxl_superstore.components.indicators import build_indicators
+from src.projet_openpyxl_superstore.components.charts import build_all_charts
+from src.projet_openpyxl_superstore.components.filter import build_all_filters
 
-from data.data import import_and_clean_data, initialize_workbook, upload_to_minio
-
-from components.styles import apply_all_styles
-from components.tables import build_all_tables
-from components.indicators import build_indicators
-from components.charts import build_all_charts
-from components.filter import build_all_filters
+# *** Identifiants du bucket Onyxia d'export ***
+# A modifier en fonction de l'utilisateur
+bucket_name = "oscar04"
+minio_path = "Superstore/reporting.xlsx"
 
 
 def main():
@@ -37,7 +40,7 @@ def main():
     print("Sauvegarde finale ✅")
     print(f"Terminé ! Fichier disponible à l'emplacement : {output_path}")
 
-    upload_to_minio(output_path)
+    upload_to_minio(output_path, bucket_name, minio_path)
     print("Export sur MinIO ✅")
 
 
