@@ -82,7 +82,7 @@ projet_openpyxl_superstore/
 ├── output/              
 │   └── reporting.xlsx      # Export du reporting
 ├── schemas_projet/         # Les schémas du projet
-│   └── schema_initial.png  # Avant projet
+│   ├── schema_initial.png  # Avant projet
 │   └── schema_final.png    # Après projet
 ├── .gitignore             
 ├── main.py                 # Fichier de lancement du projet
