@@ -6,7 +6,7 @@ import boto3
 
 
 def import_and_clean_data(url="https://minio.lab.sspcloud.fr/oscar04/Superstore/Superstore.csv"):
-    """Importe et formate les données Superstore."""
+    """ Importe et formate les données Superstore """
     dataset = pd.read_csv(url, encoding="windows-1252")
     
     # Retypage
@@ -21,7 +21,7 @@ def import_and_clean_data(url="https://minio.lab.sspcloud.fr/oscar04/Superstore/
 
 
 def initialize_workbook(dataset, output_path):
-    """Génère le fichier Excel brut et prépare les feuilles."""
+    """ Génère le fichier Excel brut et prépare les feuilles """
     chemin_dossier = Path(output_path).parent
     chemin_dossier.mkdir(parents=True, exist_ok=True)
 
@@ -39,7 +39,7 @@ def initialize_workbook(dataset, output_path):
 
 
 def upload_to_minio(chemin_local, bucket_name="oscar04", minio_path="Superstore/reporting.xlsx"):
-    """Exporte le fichier généré vers MinIO"""
+    """ Exporte le fichier généré vers MinIO - Les informations bucket_name et minio sont à modifier en fonction de l'utilisateur"""
     s3_endpoint = os.environ.get("AWS_S3_ENDPOINT")
     
     if not s3_endpoint:

@@ -4,6 +4,7 @@ from openpyxl.chart.label import DataLabelList
 
 
 def build_bar_chart(ws_data, ws_visualisations):
+    """ Crée un graphique à barres verticales du TOP 10 des profits par sous catégorie """
     chart_top10 = BarChart()
     chart_top10.type = "col"
     chart_top10.title = "TOP 10 du profit en fonction des sous-catégories"
@@ -28,6 +29,7 @@ def build_bar_chart(ws_data, ws_visualisations):
 
 
 def build_doughnut_chart(ws_data, ws_visualisations):
+    """ Crée un graphique circulaire représentant la part en pourcnetage du CA généré par catégorie """
     chart_percent = DoughnutChart()
     chart_percent.width = 18
     chart_percent.height = 10
@@ -53,5 +55,6 @@ def build_doughnut_chart(ws_data, ws_visualisations):
 
 
 def build_all_charts(ws_data, ws_visualisations):
+    """ Fonction orchestratrice pour exécuter les graphiques """
     build_bar_chart(ws_data, ws_visualisations)
     build_doughnut_chart(ws_data, ws_visualisations)

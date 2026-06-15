@@ -2,16 +2,19 @@ from openpyxl.styles import Font, Alignment, PatternFill, Border, Side
 
 
 def apply_main_title(ws_visualisations):
+    """ Définit le titre du reporting """
     ws_visualisations["K1"] = "Performances économique"
     ws_visualisations["K1"].font = Font(bold=True, size=28, color="185EB8")
 
 
 def design_numerical_kpis(ws_visualisations, cell, nom):
+    """ Définit un style aux titres des indictaurs numériques """
     ws_visualisations[cell] = nom
     ws_visualisations[cell].font = Font(bold=True, size=16)
 
 
 def create_title_abc(ws_visualisations, cell_ref, letter, color):
+    """ Désign des cellule titre (A, B ou C) """
     ws_visualisations[cell_ref] = letter
     ws_visualisations[cell_ref].font = Font(bold=True, size=14)
     ws_visualisations[cell_ref].fill = PatternFill(start_color=color, fill_type="solid")
@@ -19,6 +22,7 @@ def create_title_abc(ws_visualisations, cell_ref, letter, color):
 
 
 def design_filter_section(ws_visualisations):
+    """ Définit un style (couleur de fond et bordure) pour la partie de filtres """
     ws_visualisations.column_dimensions['A'].width = 16.5
     ws_visualisations.column_dimensions['B'].width = 17.56
 
@@ -44,6 +48,7 @@ def design_filter_section(ws_visualisations):
 
 
 def apply_all_styles(ws_visualisations):
+    """ Fonction orchestratrice pour appliquer les styles """
     apply_main_title(ws_visualisations)
     
     # KPIs déplacés
