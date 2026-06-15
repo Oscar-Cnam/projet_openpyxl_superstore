@@ -1,12 +1,10 @@
 from pathlib import Path
-
-from data.data import import_and_clean_data, initialize_workbook, upload_to_minio
-
-from components.styles import apply_all_styles
-from components.tables import build_all_tables
-from components.indicators import build_indicators
-from components.charts import build_all_charts
-from components.filter import build_all_filters
+from src.projet_openpyxl_superstore.data.data import import_and_clean_data, initialize_workbook, upload_to_minio
+from src.projet_openpyxl_superstore.components.styles import apply_all_styles
+from src.projet_openpyxl_superstore.components.tables import build_all_tables
+from src.projet_openpyxl_superstore.components.indicators import build_indicators
+from src.projet_openpyxl_superstore.components.charts import build_all_charts
+from src.projet_openpyxl_superstore.components.filter import build_all_filters
 
 
 def main():
