@@ -62,7 +62,7 @@ uv run main.py
 ```
 
 #### Récupérer le fichier
-Le reporting au format .xlsx sera généré dans le dossier output/ sous le nom reporting.xlsx. Il est également disponible sur [MinIO](https://minio.lab.sspcloud.fr/oscar04/Superstore/reporting.xlsx).
+Le reporting au format .xlsx sera généré dans le dossier output/ sous le nom reporting.xlsx. Il est également disponible sur [MinIO](https://minio.lab.sspcloud.fr/oscar04/Superstore/reporting.xlsx). Pour l'exporter dans un bucket personnel, modifiez les informations présentes dans main.py avec votre nom d'utilisateur, le nom du bucket et le chemin d'accès.
 
 ## Architecture du projet
 ```text
