@@ -41,7 +41,7 @@ L'objectif principal du projet est de créer automatiquement **un reporting sur 
 Nous allons devoir importer les données dans une feuille Excel et écrire des formules Excel via Python. Il faudra **varier les analyses et les designs** pour un rendu attractif. Le **filtrage** doit être possible pour préciser les résultats. Le visuel global doit avoir une **structure organisée** et logique. 
 
 Concernant la structure du reporting, le schema ci-dessous représente un objectif du rendu. La partie haute sera réservée à des **éléments textuels de contexte** : le logo, un titre du rapport et la source des données. Ensuite, on doit avoir des **KPIs numériques** pour avoir une information rapide et direct. Plus bas, l'espace sera réservé à l'**affichage de graphiques**. Au centre, il faudrait pouvoir afficher un tableau appliquant la **méthode ABC** sur les données afin de voir les produits plus ou moins rentable. Enfin, sur la partie tout à droite, on doit pouvoir **filtrer les données** sur plusieurs aspects comme le lieu de vente, la date, les types de produits, etc.
-<img src="schema-reporting.png" alt="drawing" width="800"/>
+<img src="schemas_projet/schema_initial.png" alt="drawing" width="800"/>
 
 ## Générer le rapport
 #### Installation du projet
