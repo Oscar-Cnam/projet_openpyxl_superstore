@@ -69,22 +69,24 @@ Le reporting au format .xlsx sera généré dans le dossier output/ sous le nom 
 projet_openpyxl_superstore/
 ├── components/             
 │   ├── __init__.py
-│   ├── charts.py         # Les graphiques
-│   ├── filter.py         # Les filtres déroulants 
-│   ├── indicators.py     # Les indicateurs numériques 
-│   ├── styles.py         # Design des cellules  
-│   └── tables.py         # Tableaux de données créés pour les indicateurs et les graphiques  
+│   ├── charts.py           # Les graphiques
+│   ├── filter.py           # Les filtres déroulants 
+│   ├── indicators.py       # Les indicateurs numériques 
+│   ├── styles.py           # Design des cellules  
+│   └── tables.py           # Tableaux de données créés pour les indicateurs et les graphiques  
 ├── data/                   
 │   ├── __init__.py
-│   └── data.py           # Paramètres MinIO et création du fichier de données
+│   └── data.py             # Paramètres MinIO et création du fichier de données
 ├── notebooks/             
-│   └── notebook.ipynb    # Notebook d'exploration  
+│   └── notebook.ipynb      # Notebook d'exploration  
 ├── output/              
-│   └── reporting.xlsx    # Export du reporting
+│   └── reporting.xlsx      # Export du reporting
+├── schemas_projet/         # Les schémas du projet
+│   └── schema_initial.png  # Avant projet
+│   └── schema_final.png    # Après projet
 ├── .gitignore             
-├── main.py               # Fichier de lancement du projet
+├── main.py                 # Fichier de lancement du projet
 ├── pyproject.toml       
 ├── README.md             
-├── schema-reporting.png   
 └── uv.lock            
 ```
