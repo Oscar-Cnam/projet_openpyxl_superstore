@@ -80,14 +80,14 @@ projet_openpyxl_superstore/
 │            ├── __init__.py
 │            └── data.py             # Paramètres MinIO et création du fichier de données
 ├── notebooks/             
-│   └── notebook.ipynb      # Notebook d'exploration  
+│   └── notebook.ipynb               # Notebook d'exploration  
 ├── output/              
-│   └── reporting.xlsx      # Export du reporting (visible sur VS Code pas sur GitHub)
-├── schemas_projet/         # Les schémas du projet
-│   ├── schema_initial.png  # Avant projet
-│   └── schema_final.png    # Après projet
+│   └── reporting.xlsx               # Export du reporting (visible sur VS Code pas sur GitHub)
+├── schemas_projet/                  # Les schémas du projet
+│   ├── schema_initial.png           # Avant projet
+│   └── schema_final.png             # Après projet
 ├── .gitignore             
-├── main.py                 # Fichier de lancement du projet
+├── main.py                          # Fichier de lancement du projet
 ├── pyproject.toml       
 ├── README.md             
 └── uv.lock            
